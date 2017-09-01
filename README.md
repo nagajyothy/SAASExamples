@@ -12,7 +12,8 @@ step3: write your own scss code.
 
 step4: Right click on that file selct webcompiler->compile file. Then it auto generates the css files along with minified file.
 
-fallow the fallowing link 
+step5: Place that css file in bulndleconfig.css
+fallow the fallowing links
 
 https://www.red-gate.com/simple-talk/dotnet/asp-net/using-sass-and-compass-in-asp-net-mvc-with-web-workbench/
 
