@@ -1,4 +1,77 @@
-﻿$HeadColor: #0094ff;
-header{
-    color:$HeadColor;
+﻿/*      ==================== variables ===================*/
+$HeadColor: #0094ff;
+$theadbackgroundcolor: #2d06f5;
+$theadfgColor: #white;
+$spnColor: #00ff90;
+
+header {
+    color: $HeadColor;
 }
+/* ================== Nested Rules =====================*/
+#dvMain {
+    h1 {
+        color: $HeadColor
+    }
+
+    td {
+        color: $spnColor;
+    }
+
+    font {
+        font-family: sans-serif;
+        font-size: 14px;
+        color: black;
+        font-weight: bold;
+    }
+}
+
+/* =================== Scope ==================*/
+#dvMain {
+    $spnColor: #2d06f5 !global;
+
+    p {
+        $HeadColor: #d880e5;
+        color: $HeadColor;
+    }
+
+    pre {
+        color: $HeadColor;
+    }
+
+    span {
+        color: $spnColor;
+    }
+}
+
+/*================== Referencing Parent Selectors: & #parent-selector ============*/
+#dvMain{
+    a{
+        color:blue;
+        font-size:5px + 20;             //it supports addition of numbers
+        $font-famtype :'Verdana',sans-serif;    //we can give strings with single quote or double quote or direct words.
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,$font-famtype;
+    
+    &:hover{
+        color:blue;
+        font-weight:bold;
+    }
+    }
+}
+/* =============== Wrapping of data to selector ===================*/
+$dvId :"dvMain";
+##{$dvId}
+{
+    background-color: #eeeeee;
+   padding:3%;
+
+}
+
+/*  ========================== Mapping function to get particular value ===============   */
+$red-map: (light : #e57373, medium: #f44336, dark: #b71c1c);
+
+##{$dvId}
+{
+    color:map-get($red-map,medium)
+
+}
+
