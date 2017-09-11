@@ -20,3 +20,5 @@ https://www.red-gate.com/simple-talk/dotnet/asp-net/using-sass-and-compass-in-as
 https://www.codeproject.com/Articles/844698/Start-SASS-in-Visual-Studio-with-Example
 
 http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+
+http://vanseodesign.com/css/
