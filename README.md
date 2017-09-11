@@ -22,3 +22,6 @@ https://www.codeproject.com/Articles/844698/Start-SASS-in-Visual-Studio-with-Exa
 http://sass-lang.com/documentation/file.SASS_REFERENCE.html
 
 http://vanseodesign.com/css/
+
+To Compile sass online --> It converts sass to css
+https://www.sassmeister.com/
