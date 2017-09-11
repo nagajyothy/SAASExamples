@@ -75,3 +75,172 @@ $red-map: (light : #e57373, medium: #f44336, dark: #b71c1c);
 
 }
 
+/* =========================== Conditional Execution ======================================= */
+
+$test: 6;
+
+##{$dvId} {
+   @if $test < 5 { 
+       color: blue;  
+    }
+   @else
+   {
+       color:darkolivegreen;
+   }
+}
+/*  ********* while loop ************** */
+
+$p: 1;
+
+@while $p < 5 {
+   ##{$dvId} h#{$p} {
+    
+        color: dodgerblue;
+    
+        $p : $p + 1;
+  
+    }
+}
+
+/*   ********* For Loop *******************/
+$colors: red, orange, yellow, green, blue, purple;
+
+@for $i from 1 through length($colors) {
+	##{$dvId} li:nth-child(#{length($colors)}n+#{$i}) {
+		background: lighten(nth($colors, $i), 20%);
+        @if $i <= 1{
+        font-size:30px;
+        }
+        @else
+        {
+            font-size:10px * $i;
+        }
+        list-style:none;
+	}
+}
+
+@for $i from 5 through 1 {
+    ##{$dvId} h#{$i}{
+        font-size : 10px * $i;
+    }
+}
+
+
+@each $name, $style in (default: normal,  emphasis: bold) {
+   .#{$name} {
+      font-weight: $style;
+  }
+}
+
+
+/*   =================================== mixins =================================== */
+$font-base: 14px;
+
+@mixin sample {
+  font-size: $font-base;
+}
+
+pre {
+  @include sample;
+}
+
+/*Arguments in Sass Mixins
+A mixin can take Sass data values as arguments. These values are specified when you define the mixin and given a specific value when you @include the mixin. 
+    The arguments are then passed to the mixin as variables. Arguments are included in a comma separated list enclosed in parentheses after the mixin name:*/
+
+@mixin headline ($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+#mixins h1 {
+  @include headline(green, 20px);
+}
+
+/*Default Values in Sass Mixins
+When creating your mixin you can specify default values as arguments. When you include a default value, you can omit passing that value when calling your mixin because Sass will use the default value. 
+    For example, if you update the headline mixin from above with a default value like in the code below:*/
+
+@mixin headline($size, $color: red) {
+  color: $color;
+  font-size: $size;
+}
+
+#mixins h1 {
+  @include headline(12px);
+}
+
+#mixins h1 {
+  @include headline(12px, blue);
+}
+
+/*Keyword Arguments in Sass Mixins
+You also have the option of including your mixin with keyword arguments. Even if using keyword arguments can make your code less concise, it will improve readability, which is important if someone else will be maintaining the code you have written.
+     You can include keyword arguments in any order, and of course default values can be omitted:*/
+
+@mixin headline($size, $color: red) {
+  color: $color;
+  font-size: $size;
+}
+
+h1 {
+  @include headline($color: blue, $size: 12px);
+}
+
+
+/*Variable Arguments in Sass Mixins
+Sometimes you may need your mixin to accept a number of arguments. For example, the padding property can have from one to four arguments. In this situation, you could create a mixin that uses variable arguments. 
+    Variable arguments allow you to package up arguments as a list. The variable arguments look like regular arguments for a mixin except they add (…) at the end:*/
+@mixin pad ($pads...) {
+  padding: $pads;
+}
+
+ ##{$dvId} li:nth-child(2n+1) {
+  @include pad(20px);
+}
+ ##{$dvId} li:nth-child(2n+2){
+  @include pad(10px 20px);
+}
+ ##{$dvId} li:nth-child(2n+3) {
+  @include pad(10px 20px 40px);
+}
+ ##{$dvId} li:nth-child(2n+4) {
+  @include pad(10px 20px 30px 20px);
+}
+
+
+ /*@content
+Through the @content directive you are also able to pass a block of styles not defined in the mixin. These additional styles will appear within the mixin where you place @content:*/
+ @mixin cont {
+  background-color: blue;
+    color: white;
+  @content;
+}
+ #mixins {
+
+  @include cont {
+    font-size: 12px;
+    font-style: italic;
+  }
+}
+
+/*  How To Write Your Own Custom Sass Functions  */
+/*@function function-name($args) {  
+ @return value-to-be-returned;  
+}*/
+
+$total: 8;  
+$col: 3;
+
+@function column-width() {  
+ @return percentage($col/$total);  
+}
+#mixins{
+    width:column-width();
+}
+
+
+pre{
+    @extend pre;
+    color:red;
+}

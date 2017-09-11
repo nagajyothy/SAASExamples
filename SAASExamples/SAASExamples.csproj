@@ -226,6 +226,12 @@
     <Content Include="Content\Main.min.css">
       <DependentUpon>Main.css</DependentUpon>
     </Content>
+    <Content Include="Content\TestImport.css">
+      <DependentUpon>TestImport.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\TestImport.min.css">
+      <DependentUpon>TestImport.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -240,6 +246,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\TestImport.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
