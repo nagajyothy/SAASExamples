@@ -20,3 +20,20 @@ https://www.red-gate.com/simple-talk/dotnet/asp-net/using-sass-and-compass-in-as
 https://www.codeproject.com/Articles/844698/Start-SASS-in-Visual-Studio-with-Example
 
 http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+
+http://vanseodesign.com/css/
+
+To Compile sass online --> It converts sass to css
+https://www.sassmeister.com/
+
+Why We Are choosing SaSS
+https://www.netguru.co/blog/7-sass-features-you-should-be-familiar-with
+
+Interview Questions on SASS
+
+https://career.guru99.com/top-17-sass-interview-questions/
+
+Differences between SASS And SCSS
+
+http://www.sitesbay.com/sass/sass-difference-between-scss-and-sass
+
