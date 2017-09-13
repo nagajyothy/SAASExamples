@@ -37,5 +37,18 @@ namespace SAASExamples.Controllers
 
             return View();
         }
+
+
+        #region Usnittesting Example
+        public int GetPercentage(double marks,double totalMarks)
+        {
+            var value = ((double)marks / totalMarks) * 100;
+            var percentage = Convert.ToInt32(Math.Round(value, 0));
+            return percentage;
+        }
+        #endregion
+
     }
+
+
 }
